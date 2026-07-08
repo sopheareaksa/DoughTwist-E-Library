@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover — DoughTwist Library</title>
+    <meta name="description" content="Browse trending, new, and top-rated books at DoughTwist Library.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/discover.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="../index.html" class="logo">
+                DoughTwist
+            </a>
+
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-login">Login</a>
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="discover-main">
+        <section class="discover-hero">
+            <div class="container">
+                <span class="eyebrow">Explore the Collection</span>
+                <h1>Discover Your Next Great Read</h1>
+                <p>Browse trending titles, new arrivals, and reader favorites from every corner of the library.</p>
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Search titles, authors, or topics..." id="searchInput" oninput="searchBook()">
+                    <button type="button" class="search-btn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+                <div class="results-header">
+                    <div class="filter-pills" id="filterPills">
+                        <button class="filter-pill active" onclick="filterByCategory('All', event)">All</button>
+                        <button class="filter-pill" onclick="filterByCategory('Comic', event)">Comic</button>
+                        <button class="filter-pill" onclick="filterByCategory('History', event)">History</button>
+                        <button class="filter-pill" onclick="filterByCategory('Literature', event)">Literature</button>
+                        <button class="filter-pill" onclick="filterByCategory('Programming', event)">Programming</button>
+                        <button class="filter-pill" onclick="filterByCategory('Novel', event)">Novel</button>
+                    </div>
+                    <select class="sort-select" title="Sort by">
+                        <option>Sort by: Trending</option>
+                        <option>Sort by: Newest</option>
+                        <option>Sort by: Rating</option>
+                    </select>
+                </div>
+
+                <div class="collections-grid" id="book-list">
+                    <!-- <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/avenger-mighty.png" alt="Avengers: Mighty Heroes cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag architecture">Comic</span>
+                            <h3>Avengers: Mighty Heroes</h3>
+                            <p><strong>Author:</strong> Sophea Reaksa</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/doctor-strange.png" alt="Doctor Strange cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag sociology">Comic</span>
+                            <h3>Doctor Strange</h3>
+                            <p><strong>Author:</strong> Sok Chanleap</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/iron-man.png" alt="Iron-Man cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag acoustics">Comic</span>
+                            <h3>Iron-Man</h3>
+                            <p><strong>Author:</strong> StickyDoughTwist</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/spider-man.png" alt="Spider-Man cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag architecture">Comic</span>
+                            <h3>Spider-Man: Ultimate</h3>
+                            <p><strong>Author:</strong> Zodiac</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/history-empires.png" alt="Rise and Fall of Empires cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag sociology">History</span>
+                            <h3>Rise and Fall of Empires</h3>
+                            <p><strong>Author:</strong> Hierophant</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/novel-canvas.png" alt="The Silent Canvas cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag architecture">Novel</span>
+                            <h3>The Silent Canvas</h3>
+                            <p><strong>Author:</strong> Sambath</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/history-angkor.png" alt="Angkorian Structures cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag architecture">History</span>
+                            <h3>Angkorian Structures</h3>
+                            <p><strong>Author:</strong> Sopanha</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/literature-shadows.png" alt="Shadows of the Past cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag sociology">Literature</span>
+                            <h3>Shadows of the Past</h3>
+                            <p><strong>Author:</strong> Sophou</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/programming-js.png" alt="Mastering JavaScript cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag acoustics">Programming</span>
+                            <h3>Mastering JavaScript</h3>
+                            <p><strong>Author:</strong> Rithysak</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/literature-echoes.png" alt="Echoes in the Wind cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag architecture">Literature</span>
+                            <h3>Echoes in the Wind</h3>
+                            <p><strong>Author:</strong> Rangsey</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/novel-midnight.png" alt="The Midnight Code cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag sociology">Novel</span>
+                            <h3>The Midnight Code</h3>
+                            <p><strong>Author:</strong> Zodiac</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-card">
+                        <a href="book-detail.html" class="card-link">
+                            <div class="card-img-wrapper">
+                                <img src="../img/programming-python.png" alt="Python & Sound Systems cover">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="tag acoustics">Programming</span>
+                            <h3>Python & Sound Systems</h3>
+                            <p><strong>Author:</strong> StickyDoughTwist</p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="load-more-wrap">
+                    <button class="btn-load-more" aria-label="Load more books">Load More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-mark">DT</span>
+                        DoughTwist
+                    </a>
+                    <p>A sanctuary for focused thought and isolated discovery.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="discover.html">Discover</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DoughTwist Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/reveal.js"></script>
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            toggle.classList.toggle('open', !expanded);
+            nav.classList.toggle('open', !expanded);
+        });
+    </script>
+    <script src="../script/discover.js"></script>
+</body>
+</html>

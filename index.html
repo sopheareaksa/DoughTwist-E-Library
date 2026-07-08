@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoughTwist Library — Discover, Read, Grow</title>
+    <meta name="description" content="A modern digital library for curated academic resources, literature, and rare digital artifacts.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="#" class="logo">
+                DoughTwist
+            </a>
+
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="pages/discover.html">Discover</a></li>
+                    <li><a href="pages/categories.html">Categories</a></li>
+                    <li><a href="pages/resources.html">Resources</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="pages/login.html" class="btn btn-login">Login</a>
+                    <a href="pages/register.html" class="btn btn-register">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="container hero-content">
+                <span class="eyebrow">Digital Library Reimagined</span>
+                <h1>Expand Your Mind,<br>Curate Your World.</h1>
+                <p>Access millions of curated academic resources, literature, and rare digital artifacts in a serene, distraction-free environment.</p>
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="search" oninput="searchCollections()" placeholder="Search authors, subjects, or keywords...">
+                    <button type="button" class="search-btn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container stats-grid">
+                <div class="stat">
+                    <strong>200+</strong>
+                    <span>Resources</span>
+                </div>
+                <div class="stat">
+                    <strong>5</strong>
+                    <span>Categories</span>
+                </div>
+                <div class="stat">
+                    <strong>50K</strong>
+                    <span>Readers</span>
+                </div>
+                <div class="stat">
+                    <strong>4.9</strong>
+                    <span>User Rating</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="collections-section" id="resources">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Featured Collections</h2>
+                        <p>Hand-picked selections from our leading curators.</p>
+                    </div>
+                    <a href="pages/discover.html" class="view-all">View All &rarr;</a>
+                </div>
+                <div class="collections-grid" id="collection"></div>
+            </div>
+        </section>
+
+        <section class="domains-section">
+            <div class="container">
+                <div class="section-header center">
+                    <div>
+                        <h2>Explore Domains</h2>
+                        <p>Dive into curated worlds of knowledge.</p>
+                    </div>
+                </div>
+                <div class="domains-grid" id="explore"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-text">
+                        <h2>Join the Reading Room.</h2>
+                        <p>Create an account to save resources, track your reading progress, and receive tailored curations directly to your dashboard.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary">Sign Up Free</button>
+                            <button class="btn btn-secondary">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="cta-visual" aria-hidden="true">
+                        <div class="book-stack">
+                            <div class="book"></div>
+                            <div class="book"></div>
+                            <div class="book"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-mark">DT</span>
+                        DoughTwist
+                    </a>
+                    <p>A sanctuary for focused thought and isolated discovery.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="pages/discover.html">Discover</a></li>
+                        <li><a href="pages/categories.html">Categories</a></li>
+                        <li><a href="pages/resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DoughTwist Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/reveal.js"></script>
+    <script src="script/index.js"></script>
+    <script>
+        // Mobile menu toggle
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            toggle.classList.toggle('open', !expanded);
+            nav.classList.toggle('open', !expanded);
+        });
+    </script>
+</body>
+</html>
