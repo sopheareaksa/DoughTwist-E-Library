@@ -480,6 +480,17 @@ section {
   gap: 24px;
 }
 
+.collection-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius);
+}
+
+.collection-link .collection-card {
+  height: 100%;
+}
+
 .collection-card {
   background-color: var(--bg);
   border-radius: var(--radius);
