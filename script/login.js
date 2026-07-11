@@ -1,4 +1,3 @@
-// Demo accounts for front-end login
 const accounts = [
     {
         id: 1,

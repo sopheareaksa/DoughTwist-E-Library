@@ -50,9 +50,10 @@
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--surface-2), var(--surface-3));
+  box-shadow: var(--shadow-3d);
   aspect-ratio: 4 / 5;
+  border: 1px solid var(--border);
 }
 
 .cover-frame img {
@@ -73,7 +74,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .badge.available {
@@ -92,9 +93,9 @@
 }
 
 .badge.borrowed {
-  background-color: #f1f5f9;
+  background-color: var(--surface-2);
   color: var(--text-muted);
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
 }
 
 /* --- Detail Info --- */
@@ -178,11 +179,13 @@
   flex-direction: column;
   gap: 6px;
   transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .meta-item:hover {
   border-color: transparent;
   box-shadow: var(--shadow);
+  transform: translateY(-3px);
 }
 
 .meta-label {
@@ -224,22 +227,24 @@
 .detail-actions .btn-primary {
   background-color: var(--primary);
   color: #fff;
+  box-shadow: 0 8px 22px -6px rgba(99, 102, 241, 0.4);
 }
 
 .detail-actions .btn-primary:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -8px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 14px 30px -8px rgba(99, 102, 241, 0.5);
 }
 
 .detail-actions .btn-secondary {
   background-color: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .detail-actions .btn-secondary:hover {
-  background-color: var(--bg);
+  background-color: var(--surface-2);
   border-color: var(--primary);
   color: var(--primary);
 }

@@ -1,6 +1,3 @@
-// Shared auth navbar updater
-// Reads the logged-in username from localStorage and updates every page's header.
-
 function updateAuthNavbar() {
     const username = localStorage.getItem("username");
     const loginBtn = document.getElementById("login");

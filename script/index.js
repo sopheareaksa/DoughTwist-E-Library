@@ -16,12 +16,11 @@ let explores = [
     },
     {
         id:4,
-        img:"img/history.png",
+        img:"img/History.png",
         title:"History",
     },
 ]
 
-// Only show the 4 featured homepage books by default
 const homepageBooks = books.filter(book => book.id >= 1 && book.id <= 4);
 
 function FeaturesCollections(dataArray = homepageBooks){

@@ -140,7 +140,7 @@ const books = [
     },
     {
         id: 9,
-        img: "img/the-structure-of-scientiific-revolutions.jpg",
+        img: "img/the-structure-of scientiific-revolutions.jpg",
         category: "History",
         title: "The Structure of Scientific Revolutions",
         author: "Thomas S. Kuhn",
