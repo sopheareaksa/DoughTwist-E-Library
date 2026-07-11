@@ -21,7 +21,10 @@ let explores = [
     },
 ]
 
-function FeaturesCollections(dataArray = books){
+// Only show the 4 featured homepage books by default
+const homepageBooks = books.filter(book => book.id >= 1 && book.id <= 4);
+
+function FeaturesCollections(dataArray = homepageBooks){
     let items = "";
     for(let i = 0; i < dataArray.length; i++){
         items += `
@@ -63,9 +66,9 @@ ExploreCollections();
 
 function searchCollections(){
     const input = document.getElementById("search").value.toLowerCase();
-    const filteredCollections = books.filter(collection => {
-        return  collection.title.toLowerCase().includes(input) || 
-                collection.author.toLowerCase().includes(input) || 
+    const filteredCollections = homepageBooks.filter(collection => {
+        return  collection.title.toLowerCase().includes(input) ||
+                collection.author.toLowerCase().includes(input) ||
                 collection.category.toLowerCase().includes(input);
     });
     FeaturesCollections(filteredCollections);
